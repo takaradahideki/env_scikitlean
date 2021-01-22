@@ -5,6 +5,8 @@ RUN apt-get update && apt apt-get install -y \
     tzdata \
     && rm -rf /var/lib/apt/lists/*
 
+RUN apk add --update nodejs nodejs-npm
+
 # モジュールのインストール
 WORKDIR /tmp/work
 COPY requirements.txt ${PWD}
